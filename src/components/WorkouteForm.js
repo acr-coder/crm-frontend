@@ -24,7 +24,7 @@ const WorkouteForm = () => {
 
     const workout = { musteri, islem, teslim_tarihi };
 
-    const response = await fetch("/api/workouts",{
+    const response = await fetch("https://customer-follow-system.herokuapp.com/api/workouts",{
         method:'POST',
         body: JSON.stringify(workout),
         headers: {

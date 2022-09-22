@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { Link } from 'react-router-dom'
 import { useWorkoutsContext } from "../hooks/useWorkoutContext"
 import { useAuthContext } from '../hooks/useAuthContext'
@@ -6,6 +6,8 @@ import WorkoutDetails from "../components/WorkoutDetails";
 import WorkouteForm from "../components/WorkouteForm";
 
 const Home = () => {
+
+  const [loading, setLoading ] = useState(false)
   
   const {workouts, dispatch} =  useWorkoutsContext()
   const { user } = useAuthContext()
@@ -30,6 +32,8 @@ const Home = () => {
     
     
   },[dispatch,user]);
+
+  if(!user) return <div>Loading...</div>
 
   
 

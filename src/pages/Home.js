@@ -33,7 +33,7 @@ const Home = () => {
     
   },[dispatch,user]);
 
-  if(!user) return <div>Loading...</div>
+ 
 
   
 
